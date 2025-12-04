@@ -1,0 +1,28 @@
+#dati 4 numeri in ingresso resituire il maggiore di 4
+
+def maggiore(a,b,c,d):
+ max = 0  
+ if a>b:
+      if a>c:
+        if a>d:
+            max = a
+        else:
+            max = d
+      else:
+        if c>d:
+            max = c
+        else: 
+            max = d
+ else:
+     if b>c:
+        if b>d:
+            max = b
+ return max
+
+a = float(input("inserisci a: "))
+b = float(input("inserisci b: "))
+c = float(input("inserisci c: "))
+d = float(input("inserisci d: "))
+
+m = maggiore(a,b,c,d)
+print ("tra ", a,",",b, ",",c,"e",d, " il maggiore è ",m)

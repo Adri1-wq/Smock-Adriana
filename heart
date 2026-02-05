@@ -4,14 +4,14 @@ import math
 screen = turtle.Screen()
 screen.title("Beating heart")
 screen.setup(1000,1000)
-screen.setwoeldcoordinates((-1000,-1000,1000,1000))
+screen.setworldcoordinates(-1000,-1000,1000,1000)
 turtle.speed(0)
 turtle.hideturtle()
-screen.tracer(0)
+screen.tracer(0,0)
 turtle.color("red")
 
 def heart(alpha, d):
-    r = d/math.tan(math.radiant(180-alpha/2))
+    r = d/math.tan(math.radians(180-alpha/2))
     turtle.up()
     turtle.goto(0,-d*math.cos(math.radians(45)))
     turtle.seth(90-(alpha-180))
@@ -33,4 +33,11 @@ def animate():
     heart(a,1000)
     screen.update()
     a += sign 
-    if a < 215 
+    if a < 215:
+        sign = -sign
+    elif a > 220:
+        sign = -sign
+    screen.ontimer(animate,50)
+
+animate()
+screen.mainloop()

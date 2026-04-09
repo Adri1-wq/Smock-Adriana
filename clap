@@ -1,11 +1,11 @@
 from microbit import *
 
 lightsOn= False
-
+clap= 0
 while True:
     if microphone.was_event(SoundEvent.LOUD):
         lightsOn= True
-        clap =+1
+        clap = clap+1
         if lightsOn:
             display.show(Image.HEART)
         else:
